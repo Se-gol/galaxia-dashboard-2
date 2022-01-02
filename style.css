@@ -1,0 +1,64 @@
+.body, html {
+    margin: 0px;
+    padding: 0px;
+}
+
+.dashboard_image {
+    background: url(dashboard.png);
+    width: 1920px;
+    height: 1080px;
+    position: absolute;
+    padding: 0;
+    margin: 0;
+    left: 0;
+    top: 0;
+}
+
+#drivetrain_command {
+    color: white;
+    font-size: 24px;
+    position: absolute;
+    left: 225px;
+    bottom: 370px;
+}
+
+#drivetrain_rotation {
+    color: white;
+    font-size: 24px;
+    position: absolute;
+    left: 225px;
+    bottom: 260px;
+}
+
+#drivetrain_pose {
+    color: white;
+    font-size: 24px;
+    position: absolute;
+    left: 225px;
+    bottom: 160px;
+}
+
+
+#game_time {
+    color: white;
+    font-size: 24px;
+    position: absolute;
+    left: 1550px;
+    bottom: 370px;
+}
+
+#game_alliance {
+    color: white;
+    font-size: 24px;
+    position: absolute;
+    left: 1550px;
+    bottom: 260px;
+}
+
+#game_period {
+    color: white;
+    font-size: 24px;
+    position: absolute;
+    left: 1550px;
+    bottom: 160px;
+}

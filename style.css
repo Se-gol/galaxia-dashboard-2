@@ -1,6 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap');
+
 .body, html {
     margin: 0px;
     padding: 0px;
+    overflow: hidden;
+    font-family: 'Poppins', sans-serif;
 }
 
 .dashboard_image {
@@ -12,30 +16,44 @@
     margin: 0;
     left: 0;
     top: 0;
+    z-index: -1;
+}
+
+.minimap_image {
+    background: url(minimap.png);
+    width: 666px;
+    height: 333px;
+    position: absolute;
+    padding: 0;
+    margin: 0;
+    left: 125px;
+    top: 150px;
+    z-index: -1;
 }
 
 #drivetrain_command {
     color: white;
     font-size: 24px;
     position: absolute;
-    left: 225px;
-    bottom: 370px;
+    left: 235px;
+    top: 681px;
 }
 
 #drivetrain_rotation {
     color: white;
     font-size: 24px;
     position: absolute;
-    left: 225px;
-    bottom: 260px;
+    left: 235px;
+    top: 786px;
 }
+
 
 #drivetrain_pose {
     color: white;
     font-size: 24px;
     position: absolute;
-    left: 225px;
-    bottom: 160px;
+    left: 235px;
+    top: 888px;
 }
 
 
@@ -43,22 +61,38 @@
     color: white;
     font-size: 24px;
     position: absolute;
-    left: 1550px;
-    bottom: 370px;
+    left: 1545px;
+    top: 678px;
 }
 
 #game_alliance {
     color: white;
     font-size: 24px;
     position: absolute;
-    left: 1550px;
-    bottom: 260px;
+    left: 1540px;
+    top: 783px;
 }
 
 #game_period {
     color: white;
     font-size: 24px;
     position: absolute;
-    left: 1550px;
-    bottom: 160px;
+    left: 1545px;
+    top: 885px;
+}
+
+#swerve {
+    position: absolute;
+    background: url(img3.png);
+    width: 45px;
+    height: 45px;
+    top: 150px;
+    left: 750px;
+    border: 1px solid black;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+}
+
+#canvas {
+    position: absolute;
 }

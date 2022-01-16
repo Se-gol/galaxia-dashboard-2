@@ -8,7 +8,7 @@
 }
 
 .dashboard_image {
-    background: url(dashboard.png);
+    background: url(images/dashboard.png);
     width: 1920px;
     height: 1080px;
     position: absolute;
@@ -20,7 +20,7 @@
 }
 
 .minimap_image {
-    background: url(minimap.png);
+    background: url(images/minimap.png);
     width: 666px;
     height: 333px;
     position: absolute;
@@ -83,7 +83,7 @@
 
 #swerve {
     position: absolute;
-    background: url(img3.png);
+    background: url(images/img3.png);
     width: 45px;
     height: 45px;
     top: 150px;
@@ -95,4 +95,12 @@
 
 #canvas {
     position: absolute;
+}
+
+#camera{
+    position: absolute;
+    width: 800px;
+    height: 600px;
+    left: 900px;
+    top: 150px;
 }

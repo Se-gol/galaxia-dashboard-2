@@ -6,33 +6,23 @@ NetworkTables.addRobotConnectionListener(function (connected) {
     console.log("Robot connected: " + connected);
 }, true);
 
-NetworkTables.addGlobalListener(function (key, value, isNew) {
-    // console.log(key)
-    // element = document.getElementById(key);
-    // element.innerText = value;
-}, true);
-
 setInterval(() => {
-        // if (NetworkTables.getValue("/SmartDashboard/drivetrain-command") != null)
         document.getElementById("drivetrain_command").innerHTML = NetworkTables.getValue("/SmartDashboard/drivetrain-command");
-        // if (NetworkTables.getValue("/SmartDashboard/drivetrain-rotation") != undefined)
         document.getElementById("drivetrain_rotation").innerHTML = NetworkTables.getValue("/SmartDashboard/drivetrain-rotation");
-        // if (NetworkTables.getValue("/SmartDashboard/drivetrain-pose") != undefined)
-        document.getElementById("drivetrain_pose").innerHTML = x
-        // if (NetworkTables.getValue("/SmartDashboard/game_time") != undefined)
+        document.getElementById("drivetrain_pose").innerHTML = NetworkTables.getValue("/SmartDashboard/drivetrain-pose");
         document.getElementById("game_time").innerHTML = NetworkTables.getValue("/SmartDashboard/game-time");
-        // if (NetworkTables.getValue("/SmartDashboard/game_alliance") != undefined)
         document.getElementById("game_alliance").innerHTML = NetworkTables.getValue("/SmartDashboard/game-alliance");
-        // if (NetworkTables.getValue("/SmartDashboard/game_period") != undefined)
         document.getElementById("game_period").innerHTML = NetworkTables.getValue("/SmartDashboard/game-period");
         if (NetworkTables.getValue("/SmartDashboard/game-period") == "AUTO")
             drawPath();
+        else {
+            var c = document.getElementById("canvas");
+            var ctx = c.getContext("2d");
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+        }
     },
     100);
 
-function map(value, minimumInput, maximumInput, minimumOutput, maximumOutput) {
-    return (value - minimumInput) * (maximumOutput - minimumOutput) / (maximumInput - minimumInput) + minimumOutput;
-}
 
 setInterval(() => {
     bruh = NetworkTables.getValue("/SmartDashboard/drivetrain-pose");
@@ -57,36 +47,6 @@ setInterval(() => {
 }, 1);
 
 
-// loadCameraOnConnect({
-//     container: '#camera',
-//     port: 5800,
-//     image_url: '/?action=stream',
-//     data_url: '/program.json',
-//     attrs: {
-//         width: 640,
-//         height: 480
-//     }
-// });
-// loadCameraOnConnect({
-//     container: '#detections',
-//     port: 5800,
-//     image_url: '/?action=stream',
-//     data_url: '/program.json',
-//     attrs: {
-//         width: 640,
-//         height: 480
-//     }
-// });
-
-
-function mapX(x) {
-    return map(x, 0, 15.8, 125, 750);
-}
-
-function mapY(y) {
-    return map(y, 0, 7.5, 440, 150);
-}
-
 function drawPath() {
     var strings = NetworkTables.getValue("/SmartDashboard/auto-path");
     if (strings == undefined) return;
@@ -110,3 +70,26 @@ function drawPath() {
     ctx.stroke();
 }
 
+function mapX(x) {
+    return map(x, 0, 15.8, 125, 750);
+}
+
+function mapY(y) {
+    return map(y, 0, 7.5, 440, 150);
+}
+
+
+function map(value, minimumInput, maximumInput, minimumOutput, maximumOutput) {
+    return (value - minimumInput) * (maximumOutput - minimumOutput) / (maximumInput - minimumInput) + minimumOutput;
+}
+
+loadCameraOnConnect({
+    container: '#camera',
+    port: 1181,
+    image_url: '/?action=stream',
+    data_url: '/config.json',
+    attrs: {
+        width: 400,
+        height: 350
+    }
+});

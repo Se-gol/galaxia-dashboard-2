@@ -8,7 +8,7 @@
 }
 
 .dashboard_image {
-    background: url(images/dashboard.png);
+    background: url(images/img_2.png);
     width: 1920px;
     height: 1080px;
     position: absolute;
@@ -20,7 +20,7 @@
 }
 
 .minimap_image {
-    background: url(images/minimap.png);
+    /*background: url(images/minimap.png);*/
     width: 666px;
     height: 333px;
     position: absolute;

@@ -93,3 +93,15 @@ loadCameraOnConnect({
         height: 350
     }
 });
+
+loadCameraOnConnect({
+    container: '#camera2',
+    host: 'photonvision.local',
+    port: 1183,
+    image_url: '/stream.mjpg?1643123413248',
+    data_url: '/config.json',
+    attrs: {
+        width: 400,
+        height: 350
+    }
+});
